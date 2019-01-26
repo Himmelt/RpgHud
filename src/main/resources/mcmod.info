@@ -1,0 +1,19 @@
+[
+  {
+    "modid": "rpghud",
+    "name": "RPG Hud",
+    "description": "The new RPG Hud Mod for 1.7.10",
+    "version": "${version}",
+    "mcversion": "${mcversion}",
+    "url": "",
+    "updateUrl": "",
+    "authorList": [
+      "KurodaAkira",
+      "Himmelt"
+    ],
+    "credits": "",
+    "logoFile": "",
+    "screenshots": [],
+    "dependencies": []
+  }
+]

@@ -1,0 +1,47 @@
+buildscript {
+    repositories {
+        maven {
+            name = 'aliyun'
+            url = 'https://maven.aliyun.com/repository/public'
+        }
+        maven {
+            name = "forge"
+            url = "http://files.minecraftforge.net/maven"
+        }
+    }
+    dependencies {
+        classpath 'net.minecraftforge.gradle:ForgeGradle:1.2-SNAPSHOT'
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'forge'
+
+version = "1.7.10-2.5.1"
+group = "net.rpghud"
+
+sourceCompatibility = targetCompatibility = 1.7
+
+minecraft {
+    version = "1.7.10-10.13.4.1614-1.7.10"
+    runDir = "build/run"
+}
+
+dependencies {
+}
+
+processResources {
+    inputs.property "version", project.version
+    inputs.property "mcversion", project.minecraft.version
+    from(sourceSets.main.resources.srcDirs) {
+        include 'mcmod.info'
+        expand 'version': project.version, 'mcversion': project.minecraft.version
+    }
+    from(sourceSets.main.resources.srcDirs) {
+        exclude 'mcmod.info'
+    }
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
